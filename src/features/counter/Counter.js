@@ -12,9 +12,9 @@ const Counter = () => {
     const count = useSelector(getCount);
     return (
         <Container>
-            <Button down={'true'} onClick={() => dispatch(increment())} />
+            <Button onClick={() => dispatch(decrement())}>⬇</Button>
             <Text text={count} />
-            <Button up={'true'} onClick={() => dispatch(decrement())} />
+            <Button onClick={() => dispatch(increment())}>⬆</Button>
         </Container>
     );
 };

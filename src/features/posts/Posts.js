@@ -2,6 +2,8 @@ import { faker } from '@faker-js/faker';
 import axios from 'axios';
 import React, { useEffect, useState } from 'react';
 
+import Button from '@components/Button';
+
 import PostItem from './components/PostItem';
 
 const Posts = () => {
@@ -29,6 +31,7 @@ const Posts = () => {
             {posts.map((post) => (
                 <PostItem key={post.id} {...post} />
             ))}
+            <Button onClick={createPost}>Create Post</Button>
         </div>
     );
 };
