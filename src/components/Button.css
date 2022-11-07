@@ -1,0 +1,65 @@
+.button span {
+  display: inline-block;
+  font-size: 2em;
+  font-family: "Changa One", arial, serif;
+  padding: 0.625em 1em;
+  background: #008752;
+  background-image: url("data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0idXRmLTgiPz4gPHN2ZyB2ZXJzaW9uPSIxLjEiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PGRlZnM+PGxpbmVhckdyYWRpZW50IGlkPSJncmFkIiBncmFkaWVudFVuaXRzPSJvYmplY3RCb3VuZGluZ0JveCIgeDE9IjAuNSIgeTE9IjAuMCIgeDI9IjAuNSIgeTI9IjEuMCI+PHN0b3Agb2Zmc2V0PSIwJSIgc3RvcC1jb2xvcj0iIzAwODc1MiIvPjxzdG9wIG9mZnNldD0iMTAwJSIgc3RvcC1jb2xvcj0iIzAwNzg0OSIvPjwvbGluZWFyR3JhZGllbnQ+PC9kZWZzPjxyZWN0IHg9IjAiIHk9IjAiIHdpZHRoPSIxMDAlIiBoZWlnaHQ9IjEwMCUiIGZpbGw9InVybCgjZ3JhZCkiIC8+PC9zdmc+IA==");
+  background-size: 100%;
+  background-image: -webkit-gradient(
+    linear,
+    50% 0%,
+    50% 100%,
+    color-stop(0%, #008752),
+    color-stop(100%, #007849)
+  );
+  background-image: -moz-linear-gradient(#008752, #007849);
+  background-image: -webkit-linear-gradient(#008752, #007849);
+  background-image: linear-gradient(#008752, #007849);
+  border-top: 1px solid rgba(255, 255, 255, 0.2);
+  border-bottom: 1px solid rgba(0, 0, 0, 0.2);
+  text-shadow: 0 -1px 1px rgba(7, 51, 34, 0.8);
+  -moz-border-radius: 8px;
+  -webkit-border-radius: 8px;
+  border-radius: 8px;
+  -moz-transition: -moz-transform 0.2s ease-in-out;
+  -o-transition: -o-transform 0.2s ease-in-out;
+  -webkit-transition: -webkit-transform 0.2s ease-in-out;
+  transition: transform 0.2s ease-in-out;
+}
+
+.button {
+  display: inline-block;
+  color: #eff6ec;
+  text-decoration: none;
+  cursor: pointer;
+  -moz-border-radius: 8px;
+  -webkit-border-radius: 8px;
+  border-radius: 8px;
+  -moz-box-shadow: 0 8px 0 #004d2f, 0 10px 15px rgba(0, 0, 0, 0.35);
+  -webkit-box-shadow: 0 8px 0 #004d2f, 0 10px 15px rgba(0, 0, 0, 0.35);
+  box-shadow: 0 8px 0 #004d2f, 0 10px 15px rgba(0, 0, 0, 0.35);
+  -moz-transition: box-shadow 0.2s ease-in-out;
+  -o-transition: box-shadow 0.2s ease-in-out;
+  -webkit-transition: box-shadow 0.2s ease-in-out;
+  transition: box-shadow 0.2s ease-in-out;
+}
+
+.button:active {
+  -moz-box-shadow: 0 8px 0 #004d2f, 0 7px 10px rgba(0, 0, 0, 0.25);
+  -webkit-box-shadow: 0 8px 0 #004d2f, 0 7px 10px rgba(0, 0, 0, 0.25);
+  box-shadow: 0 8px 0 #004d2f, 0 7px 10px rgba(0, 0, 0, 0.25);
+}
+
+.button:active span {
+  -moz-transform: translateY(4px);
+  -ms-transform: translateY(4px);
+  -webkit-transform: translateY(4px);
+  transform: translateY(4px);
+}
+
+.container {
+  max-width: 60em;
+  margin: 2em auto;
+  text-align: center;
+}
