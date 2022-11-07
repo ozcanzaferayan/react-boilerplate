@@ -4,9 +4,10 @@ import { factory, primaryKey } from '@mswjs/data';
 const db = factory({
     post: {
         id: primaryKey(faker.datatype.uuid),
-        title: faker.lorem.words,
-        content: faker.lorem.paragraphs,
-        image: faker.image.imageUrl,
+        title: () => faker.animal.cat(),
+        content: () => faker.lorem.paragraphs(1),
+        author: () => faker.name.fullName(),
+        image: () => faker.image.imageUrl(640, 480, 'cat', true),
     },
 });
 
