@@ -1,17 +1,16 @@
-// src/mocks/handlers.js
 import { rest } from 'msw';
 
-export const handlers = [
-    // Handles a POST /login request
-    rest.post('/login', null),
+import db from './db';
 
-    // Handles a GET /user request
-    rest.get('/user', (req, res, ctx) => {
-        return res(
-            ctx.json({
-                firstName: 'John',
-                lastName: 'Maverick',
-            }),
-        );
+export const handlers = [
+    rest.get('/posts', (req, res, ctx) => {
+        const posts = db.post.findMany({});
+        return res(ctx.json(posts));
+    }),
+
+    rest.post('/posts', async (req, res, ctx) => {
+        const post = await req.json();
+        db.post.create(post);
+        return res(ctx.json(post));
     }),
 ];
