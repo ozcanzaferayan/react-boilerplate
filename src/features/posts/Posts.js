@@ -13,7 +13,9 @@ const Posts = () => {
     }, []);
 
     const getPosts = () => {
-        axios.get('/posts').then(({ data }) => setPosts(data));
+        axios.get('/posts').then(({ data }) => {
+            setPosts(data);
+        });
     };
 
     const createPost = async () => {
@@ -24,6 +26,9 @@ const Posts = () => {
         };
         await axios.post('/posts', data);
         getPosts();
+        setTimeout(() => {
+            window.scrollBy(0, 500);
+        }, 25);
     };
     return (
         // @ts-ignore
