@@ -1,22 +1,19 @@
 import { faker } from '@faker-js/faker';
 import axios from 'axios';
 import React, { useEffect, useState } from 'react';
+import { useDispatch, useSelector } from 'react-redux';
 
 import Button from '@components/Button';
 
 import PostItem from './components/PostItem';
+import { addPost, fetchPosts, selectPosts } from './postsSlice';
 
 const Posts = () => {
-    const [posts, setPosts] = useState([]);
+    const posts = useSelector(selectPosts);
+    const dispatch = useDispatch();
     useEffect(() => {
-        getPosts();
+        dispatch(fetchPosts());
     }, []);
-
-    const getPosts = () => {
-        axios.get('/posts').then(({ data }) => {
-            setPosts(data);
-        });
-    };
 
     const createPost = async () => {
         const data = {
@@ -24,8 +21,8 @@ const Posts = () => {
             content: faker.lorem.paragraphs,
             image: faker.image.imageUrl,
         };
-        await axios.post('/posts', data);
-        getPosts();
+        dispatch(addPost(data));
+        dispatch(fetchPosts());
         setTimeout(() => {
             window.scrollBy(0, 500);
         }, 25);
