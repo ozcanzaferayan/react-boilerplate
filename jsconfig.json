@@ -1,11 +1,11 @@
 {
-  "compilerOptions": {
-    "jsx": "react",
-    "checkJs": true,
-    "baseUrl": "src",
-    "paths": {
-      "@components/*": ["components/*"],
-      "@features/*": ["features/*"]
+    "compilerOptions": {
+        "jsx": "react",
+        "checkJs": true,
+        "baseUrl": "src",
+        "paths": {
+            "@components/*": ["components/*"],
+            "@features/*": ["features/*"]
+        }
     }
-  }
 }
