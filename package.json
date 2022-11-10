@@ -25,7 +25,8 @@
         "start": "craco start",
         "build": "craco build",
         "test": "craco test",
-        "tsc": "tsc --noEmit"
+        "tsc": "tsc --noEmit",
+        "prepare": "husky install"
     },
     "eslintConfig": {
         "extends": [
@@ -49,8 +50,10 @@
         "@mswjs/data": "^0.11.0",
         "@trivago/prettier-plugin-sort-imports": "^3.4.0",
         "@tsconfig/create-react-app": "^1.0.3",
+        "lint-staged": "^13.0.3",
         "msw": "^0.47.4",
-        "prettier": "^2.7.1"
+        "prettier": "^2.7.1",
+        "husky": "^8.0.0"
     },
     "msw": {
         "workerDirectory": "public"
