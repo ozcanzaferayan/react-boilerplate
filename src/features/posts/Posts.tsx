@@ -1,24 +1,27 @@
 import { faker } from '@faker-js/faker';
-import React, { useEffect, useState } from 'react';
+import React, { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
+import { AppDispatch } from 'store/store';
 
-import Button from '@components/Button';
+import Button from '@components/button/Button';
 
 import PostItem from './components/PostItem';
 import { addPost, fetchPosts, selectPosts } from './postsSlice';
+import Post from './types/Post';
 
 const Posts = () => {
     const posts = useSelector(selectPosts);
-    const dispatch = useDispatch();
+    const dispatch = useDispatch<AppDispatch>();
     useEffect(() => {
         dispatch(fetchPosts());
-    }, []);
+    }, [dispatch]);
 
     const createPost = async () => {
-        const data = {
-            title: () => faker.lorem.words(2),
-            content: faker.lorem.paragraphs,
-            image: faker.image.imageUrl,
+        const data: Post = {
+            title: faker.lorem.words(2),
+            content: faker.lorem.paragraphs(),
+            image: faker.image.imageUrl(),
+            author: faker.name.firstName(),
         };
         dispatch(addPost(data));
         dispatch(fetchPosts());
@@ -27,8 +30,7 @@ const Posts = () => {
         }, 25);
     };
     return (
-        // @ts-ignore
-        <div style={styles.container}>
+        <div style={styles.container as React.CSSProperties}>
             {posts.map((post) => (
                 <PostItem key={post.id} {...post} />
             ))}

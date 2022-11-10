@@ -1,13 +1,14 @@
 import React from 'react';
+import Post from '../types/Post';
 
-const PostItem = ({ image, title, content, author }) => {
+const PostItem = ({ image, title, content, author }: Post) => {
     return (
         <div style={styles.container}>
             <div>
                 <img alt="post" src={image} style={styles.image} />
             </div>
-            {/* @ts-ignore */}
-            <div style={styles.content}>
+
+            <div style={styles.content as React.CSSProperties}>
                 <h3 style={styles.title}>{title}</h3>
                 <p style={styles.text}>{content}</p>
                 <a href={`/` + author} style={styles.author}>

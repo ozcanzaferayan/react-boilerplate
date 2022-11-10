@@ -2,9 +2,13 @@ import React from 'react';
 
 import './Button.css';
 
-const Button = (props) => {
+type Props = {
+    children: React.ReactNode;
+    onClick: () => void;
+};
+const Button = (props: Props) => {
     return (
-        <a role="button" className="button" name={props.children} {...props}>
+        <a role="button" className="button" {...props}>
             <span style={styles.text}>{props.children}</span>
         </a>
     );

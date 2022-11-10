@@ -1,7 +1,7 @@
 import React from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 
-import Button from '@components/Button';
+import Button from '@components/button/Button';
 
 import Container from './components/CounterContainer';
 import Text from './components/CounterText';
